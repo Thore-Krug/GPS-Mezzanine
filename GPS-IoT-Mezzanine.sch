@@ -50,7 +50,7 @@
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="no"/>
+<layer number="42" name="bRestrict" color="1" fill="3" visible="no" active="no"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
@@ -164,11 +164,11 @@
 </layers>
 <schematic xreflabel="%F%N" xrefpart="/%S.%C%R">
 <libraries>
-<library name="frames">
+<library name="frames" urn="urn:adsk.eagle:library:229">
 <packages>
 </packages>
 <symbols>
-<symbol name="A4L-LOC">
+<symbol name="A4L-LOC" urn="urn:adsk.eagle:symbol:13874/1" library_version="1">
 <wire x1="256.54" y1="3.81" x2="256.54" y2="8.89" width="0.1016" layer="94"/>
 <wire x1="256.54" y1="8.89" x2="256.54" y2="13.97" width="0.1016" layer="94"/>
 <wire x1="256.54" y1="13.97" x2="256.54" y2="19.05" width="0.1016" layer="94"/>
@@ -193,7 +193,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
+<deviceset name="A4L-LOC" urn="urn:adsk.eagle:component:13926/1" prefix="FRAME" uservalue="yes" library_version="1">
 <description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
 DIN A4, landscape with location and doc. field</description>
 <gates>
@@ -213,16 +213,6 @@ DIN A4, landscape with location and doc. field</description>
 <description>Generated from &lt;b&gt;mezza.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs.ulp</description>
 <packages>
-<package name="96BOARDS-IOT-1.8V">
-<wire x1="0" y1="0" x2="60" y2="0" width="0.127" layer="20"/>
-<wire x1="0" y1="30" x2="60" y2="30" width="0.127" layer="20"/>
-<wire x1="0" y1="30" x2="0" y2="0" width="0.127" layer="20"/>
-<wire x1="60" y1="30" x2="60" y2="0" width="0.127" layer="20"/>
-<pad name="G$1" x="4" y="4" drill="2.5"/>
-<pad name="G$2" x="56" y="4" drill="2.5"/>
-<pad name="G$3" x="56" y="26" drill="2.5"/>
-<pad name="G$4" x="4" y="26" drill="2.5"/>
-</package>
 <package name="57202-G52-20LF">
 <smd name="P$1" x="-19" y="2" dx="1" dy="2.5" layer="1"/>
 <smd name="P$2" x="-19" y="-2" dx="1" dy="2.5" layer="1"/>
@@ -276,18 +266,6 @@ by exp-lbrs.ulp</description>
 </package>
 </packages>
 <symbols>
-<symbol name="96BOARDS-IOT-1.8V-HOLES">
-<circle x="-12.7" y="-2.54" radius="2.54" width="0.254" layer="94"/>
-<circle x="-5.08" y="-2.54" radius="2.54" width="0.254" layer="94"/>
-<circle x="2.54" y="-2.54" radius="2.54" width="0.254" layer="94"/>
-<circle x="10.16" y="-2.54" radius="2.54" width="0.254" layer="94"/>
-<pin name="P$1" x="-12.7" y="-7.62" length="short" rot="R90"/>
-<pin name="P$2" x="-5.08" y="-7.62" length="short" rot="R90"/>
-<pin name="P$3" x="2.54" y="-7.62" length="short" rot="R90"/>
-<pin name="P$4" x="10.16" y="-7.62" length="short" rot="R90"/>
-<text x="-15.24" y="5.08" size="1.27" layer="96">&gt;VALUE</text>
-<text x="-15.24" y="2.54" size="1.27" layer="95">&gt;NAME</text>
-</symbol>
 <symbol name="GND">
 <wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
 <wire x1="1.27" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
@@ -345,24 +323,6 @@ by exp-lbrs.ulp</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="96BOARDS-IOT-1.8V" prefix="PCB">
-<gates>
-<gate name="G$1" symbol="96BOARDS-IOT-1.8V-HOLES" x="2.54" y="5.08"/>
-</gates>
-<devices>
-<device name="" package="96BOARDS-IOT-1.8V">
-<connects>
-<connect gate="G$1" pin="P$1" pad="G$1"/>
-<connect gate="G$1" pin="P$2" pad="G$2"/>
-<connect gate="G$1" pin="P$3" pad="G$3"/>
-<connect gate="G$1" pin="P$4" pad="G$4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="GND" prefix="SUPPLY">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
@@ -11091,6 +11051,60 @@ Battery Characteristics:
 </deviceset>
 </devicesets>
 </library>
+<library name="GPS-IoT-Mezzanine">
+<description>Generated from &lt;b&gt;GPS-IoT-Mezzanine.sch&lt;/b&gt;&lt;p&gt;
+by exp-lbrs.ulp</description>
+<packages>
+<package name="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V">
+<wire x1="60" y1="28.73" x2="60" y2="1.27" width="0.127" layer="20"/>
+<wire x1="60" y1="1.27" x2="58.73" y2="0" width="0.127" layer="20" curve="-90"/>
+<wire x1="0" y1="28.73" x2="0" y2="1.27" width="0.127" layer="20"/>
+<wire x1="0" y1="1.27" x2="1.27" y2="0" width="0.127" layer="20" curve="90"/>
+<wire x1="1.27" y1="0" x2="58.73" y2="0" width="0.127" layer="20"/>
+<wire x1="1.27" y1="30" x2="58.73" y2="30" width="0.127" layer="20"/>
+<wire x1="58.73" y1="30" x2="60" y2="28.73" width="0.127" layer="20" curve="-90"/>
+<wire x1="1.27" y1="30" x2="0" y2="28.73" width="0.127" layer="20" curve="90"/>
+<pad name="G$1" x="4" y="4" drill="2.5"/>
+<pad name="G$2" x="56" y="4" drill="2.5"/>
+<pad name="G$3" x="56" y="26" drill="2.5"/>
+<pad name="G$4" x="4" y="26" drill="2.5"/>
+</package>
+</packages>
+<symbols>
+<symbol name="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V-HOLES">
+<circle x="-12.7" y="-2.54" radius="2.54" width="0.254" layer="94"/>
+<circle x="-5.08" y="-2.54" radius="2.54" width="0.254" layer="94"/>
+<circle x="2.54" y="-2.54" radius="2.54" width="0.254" layer="94"/>
+<circle x="10.16" y="-2.54" radius="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="-12.7" y="-7.62" length="short" rot="R90"/>
+<pin name="P$2" x="-5.08" y="-7.62" length="short" rot="R90"/>
+<pin name="P$3" x="2.54" y="-7.62" length="short" rot="R90"/>
+<pin name="P$4" x="10.16" y="-7.62" length="short" rot="R90"/>
+<text x="-15.24" y="5.08" size="1.27" layer="96">&gt;VALUE</text>
+<text x="-15.24" y="2.54" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V" prefix="PCB">
+<gates>
+<gate name="G$1" symbol="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V-HOLES" x="2.54" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V">
+<connects>
+<connect gate="G$1" pin="P$1" pad="G$1"/>
+<connect gate="G$1" pin="P$2" pad="G$2"/>
+<connect gate="G$1" pin="P$3" pad="G$3"/>
+<connect gate="G$1" pin="P$4" pad="G$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11098,13 +11112,14 @@ Battery Characteristics:
 </variantdefs>
 <classes>
 <class number="0" name="default" width="0" drill="0">
+<clearance class="0" value="0.205"/>
 </class>
 <class number="3" name="power" width="0" drill="0">
 </class>
 </classes>
 <parts>
-<part name="FRAME3" library="frames" deviceset="A4L-LOC" device=""/>
-<part name="PCB1" library="96Boards-IoT-Mezzanine" deviceset="96BOARDS-IOT-1.8V" device=""/>
+<part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
+<part name="PCB1" library="GPS-IoT-Mezzanine" deviceset="96BOARDS-IOT-MEZZANINE_96BOARDS-IOT-1.8V" device=""/>
 <part name="SUPPLY4" library="96Boards-IoT-Mezzanine" deviceset="GND" device=""/>
 <part name="U$1" library="96Boards-IoT-Mezzanine" deviceset="57202-G52-20LF" device=""/>
 <part name="SUPPLY1" library="96Boards-IoT-Mezzanine" deviceset="GND" device=""/>
@@ -11117,14 +11132,14 @@ Battery Characteristics:
 <part name="Q2" library="SamacSys_Parts" deviceset="DTC143ZEBTL" device=""/>
 <part name="SUPPLY7" library="96Boards-IoT-Mezzanine" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="96Boards-IoT-Mezzanine" deviceset="GND" device=""/>
-<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2"/>
+<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="OSK51206C1E ( Pink ) "/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF"/>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10uF"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="100n"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10R"/>
 <part name="U1" library="LD1117D33TR" deviceset="LD1117D33TR" device=""/>
 <part name="U2" library="TXS0104ED" deviceset="TXS0104ED" device=""/>
 <part name="SUPPLY10" library="96Boards-IoT-Mezzanine" deviceset="GND" device=""/>
@@ -11903,8 +11918,15 @@ Battery Characteristics:
 </sheets>
 <errors>
 <approved hash="104,1,12.7,93.98,L80-R,VCC,+3V3,,,"/>
+<approved hash="202,1,48.26,81.28,L80-R,RESERVED,,,,"/>
 <approved hash="104,1,-68.58,-20.32,U2,VCCA,+1V8,,,"/>
 <approved hash="104,1,-68.58,-22.86,U2,VCCB,+3V3,,,"/>
+<approved hash="104,1,-15.24,66.04,BT1,-,GND,,,"/>
+<approved hash="104,1,-15.24,76.2,BT1,+,V_BCKP,,,"/>
+<approved hash="206,1,-81.28,12.7,+3V3,,,,,"/>
+<approved hash="206,1,-81.28,15.24,+3V3,,,,,"/>
+<approved hash="206,1,-81.28,17.78,+3V3,,,,,"/>
+<approved hash="206,1,-81.28,20.32,+3V3,,,,,"/>
 <approved hash="106,1,-83.82,58.42,GPIO-B,,,,,"/>
 <approved hash="106,1,-83.82,55.88,GPIO-D,,,,,"/>
 <approved hash="106,1,-104.14,53.34,GPIO-E,,,,,"/>
